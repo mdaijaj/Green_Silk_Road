@@ -1,9 +1,9 @@
 # Green_Silk_Road
-for helping volenteer.
+for helping volunteer.
 ## Introduction about Project:-
-In this project solve the barrier of volenteer and NGO who volenter came to any NGO they fill the check about NGO and <br>
+In this project solve the barrier of volunteer and NGO who volunteer came to any NGO they fill the check about NGO and <br>
 what he requirement like skill, communication, any many more things.<br>
-So If volenteer to visit any NGO then they have to introduce theire self and know about NGO information what he need and yours.
+So If volunteer to visit any NGO then they have to introduce theire self and know about NGO information what he need and yours.
 
 ## Requirement:-
 Create Project:- `sudo npm init` <br>
