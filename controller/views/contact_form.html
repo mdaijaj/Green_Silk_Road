@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<!-- <link rel="stylesheet" type="text/css" href="contact_form.css"> -->
+<title>Contact Detail</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" type="text/css" href="/contact_form.css"> -->
+<link rel="icon" type="image/jpg" href="https://comps.canstockphoto.com/letter-t-sign-design-template-element-eps-vectors_csp48692731.jpg">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>   
+<!-- for upload image -->
+
+<style >
+  body {  
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:url("http://sfwallpaper.com/images/hd-website-backgrounds-21.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    }
+    * {box-sizing: border-box;}
+    input,textarea,select{
+      background: rgba(255,255,255,0.4);
+    }
+    h1{
+      margin-left: 40%;
+      color: white;
+    }
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      /*background-color: #f2f2f2;*/
+      padding-left:10%;
+      padding-right:10%;
+    }
+
+    .border{
+      /*background:#09DBCD;*/
+      padding:50px;
+      margin:20px auto 50px;
+      border: 2px solid #00e6ac;
+    }
+
+/*     .profile{
+      width:80%;
+      margin:0;
+      padding: 0;
+      display:flex;
+      justify-content:space-between;
+    } */
+    .profile img{
+        padding-bottom:4%;
+
+    }
+    /*cheg by prakash*/
+    input[type=date]{
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+    input[type=Age]{
+      width: 5%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-left: 60px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+    .lang_div{
+      border-style: solid;
+      padding: 7px;
+    }
+    .lang_div input{
+      margin-left: 36px;
+    }
+    .lang_list{
+      margin: 1% 0% 0% 20%;
+
+    }
+    #move_1{
+      margin-left: 3.2vw;
+    }
+    ::placeholder {
+      color: black;
+      opacity: 0.7; /* Firefox */
+    }
+    .border label{
+      color: white;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .lang_div span{
+      color: white;
+    }
+    input[type=submit]:hover {
+    background-color: red;
+    padding:13px 23px;
+  }
+  .sedein{
+    margin-left: 300px;
+    margin-top: -250px;
+    margin-bottom: 130px;
+  }
+
+    @media only screen and (max-width: 600px) {
+/*       .profile img{
+        width:70%;
+        padding-bottom:10%;
+      } */
+      .profile{
+      display:flex;
+      align-items: center;
+      flex-direction:column;
+
+    }
+    .container {
+      border-radius: 5px;
+      padding-left:0;
+      padding-right:0;
+    }
+
+    h1{
+      margin-left:16%;
+    }
+      input[type=Age]{
+      width: 28%;
+    }
+     .lang_div input{
+      margin-left: 30px;
+    }
+    .lang_div{
+      padding: 7px;
+      margin: 0% -13% 0% -13%;
+    }
+     .lang_list{
+      margin: 1% 0% 0% 20%;
+
+    }
+    }
+    .imagechange{
+      height: 220px;
+      width: 200px;
+      /*border: 6px solid black;*/
+      border-radius: 25px;
+      margin: -15px 0px -10px 0px;
+      cursor: pointer;
+    }
+    @media only screen and (max-width: 1000px){
+     #form{
+      width: 200px;
+    } 
+
+      .sedein{
+      margin-left: 0px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    }
+</style>
+
+<body>
+<h1>Contact Form</h1>
+
+<div class="container">
+<div class="border">
+
+  <form action='/postData_form' method='POST'>
+    <div class="profile">
+      <img name="user_profile" class="imagechange" id="blah" src="https://image.shutterstock.com/z/stock-vector-folder-icon-vector-with-person-personal-file-of-user-profile-information-avatar-in-glyph-pictogram-701343115.jpg">
+      <script>
+        function readURL(input){               /* script language upload images*/
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+            $('#blah')
+            .attr('src', e.target.result)
+            };
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+      </script>
+    </div><br>
+    <input onchange="readURL(this)" id="form" type="file" name="img" value="choose Image">
+    
+    <div class="sedein">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    </div>
+
+    <label for="email">Email address</label>
+    <input type="text" id="email" name="email" placeholder="Your Email.."><br><br>
+
+    <label for=number>Phone number</label>
+    <input type="text" placeholder="Your Number.." name="phone">
+
+    <label for=number>Fields</label>
+    <input type="text" placeholder="Your Fields.." name="fields">
+
+    <label for=number>Your Age</label><br>
+    <input type="Age" name="User_Age"><br>
+
+    <label for="number">Join Date</label>
+    <input type="date" name="Join_date">
+
+    <label for="number">Leaving Date</label>
+    <input type="date" name="leaving_date">
+
+    <label for="number">Traveling as a group? </label><br><br>
+    <input type="radio" name="negative" value="yes"><span style="color: white"> Yes</span>
+    <input type="radio" name="negative" value="no"><span style="color: white"> NO</span><br><br>
+
+    <textarea name="group_bio" placeholder="if yes name of the group?" style="height:200px"></textarea>
+
+    <label for="country">Nationality</label>
+    <select id="country" name="country">
+      <option value="Select">Select_country</option>
+      <option value="Australia">Australia</option>
+      <option value="Canada">Canada</option>
+      <option value="USA">USA</option>
+      <option value="India">India</option>
+      <option value="Singapure">Singapure</option>
+      <option value="Switzerland">Switzerland</option>
+      <option value="Dubai">Dubai</option>
+    </select>
+
+    <label for="country">Languages</label><br><br>
+    <div class="lang_div">
+      <input type="checkbox" name="vehicle" value="English" checked><span> English</span> 
+      <input type="checkbox" name="vehicle" value="Hindi"><span> Hindi</span>
+      <input type="checkbox" name="vehicle" value="Tamil"><span> Tamil</span>
+      <input type="checkbox" name="vehicle" value="French"><span> French</span>
+      <input type="checkbox" name="vehicle" value="Russian"><span> Russian</span>
+      <input type="checkbox" name="vehicle" value="Turkish"><span> Turkish</span>
+      <input type="checkbox" name="vehicle" value="Farsi"><span> Farsi</span><br><br>
+      <input type="checkbox" name="vehicle" value="Arab"><span> Arab</span> 
+      <input type="checkbox" name="vehicle" value="German"><span> German</span>
+      <input type="checkbox" name="vehicle" value="Italian"><span> Italian</span>
+      <input type="checkbox" name="vehicle" value="Dutch"><span> Dutch</span>
+      <input type="checkbox" name="vehicle" value="Telugu"><span> Telugu</span>
+      <input type="checkbox" name="vehicle" value="Marathi"><span> Marathi</span>
+      <input type="checkbox" name="vehicle" value="Nepali"><span> Nepali</span><br><br>
+      <div id="move_1">
+        <label for="country">Other</label>
+        <input class="lang_list" list="browsers" name="Languages_lists">
+      </div>
+    </div><br>
+
+    <label for="subject">Short bio</label>
+    <textarea id="subject" name="description" placeholder="tell us about your life journey till now and why you're keen to join" style="height:200px"></textarea>
+
+    <label>Skills</label>
+    <textarea id="skills" name="skills" placeholder="What are the skills you have....." style="height:200px"></textarea>
+    <input type="submit" name="submit" value="Submit">
+  </form>
+  </div>
+</div>
+</body>
+</html>
